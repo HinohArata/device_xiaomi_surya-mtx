@@ -14,13 +14,18 @@ $(call inherit-product, device/xiaomi/surya/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# RisingOS
-TARGET_CORE_GMS := true
+# MatrixxOS
 WITH_GMS := true
+BUILD_GOOGLE_CONTACTS := true
+BUILD_GOOGLE_DIALER := true
+BUILD_GOOGLE_MESSAGE := true
 TARGET_ENABLE_BLUR := true
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_HAS_UDFPS := false
-TARGET_DEFAULT_PIXEL_LAUNCHER := false
+MATRIXX_CHIPSET := SM7150
+MATRIXX_BATTERY := 5160mAh
+MATRIXX_DISPLAY := 1080x2400
+MATRIXX_MAINTAINER := Skyy丨アラタ
 
 # Device Manufacture
 PRODUCT_NAME := lineage_surya
@@ -30,16 +35,8 @@ PRODUCT_MODEL := M2007J20CG
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 USE_GMS := true
-RISING_MAINTAINER=Skyy丨アラタ
 
 BUILD_FINGERPRINT := POCO/surya_global/surya:12/RKQ1.211019.001/V14.0.2.0.SJGMIXM:user/release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="surya_global-user 12 RKQ1.211019.001 V14.0.2.0.SJGMIXM release-keys"
-    
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    RISING_CHIPSET="Qualcomm Snapdragon 732G" \
-    RISING_MAINTAINER="Skyy丨アラタ"
-
-PRODUCT_PACKAGES += \
-    LatinIMEGooglePrebuilt
